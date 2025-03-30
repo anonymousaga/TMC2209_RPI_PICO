@@ -100,7 +100,7 @@ class TMC_UART:
             if(tries>=10):
                 print("TMC2209: after 10 tries not valid answer. exiting")
                 print("TMC2209: is Stepper Powersupply switched on ?")
-                raise SystemExit
+                raise Exception("TMC2209: after 10 tries not valid answer. exiting")
         val = struct.unpack(">i",rtn)[0]
         return(val)
 
